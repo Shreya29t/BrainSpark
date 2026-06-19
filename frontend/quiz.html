@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainSpark — Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+</head>
+<body class="light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">Brain<span class="sky">Spark</span></a>
+      <div class="navbar-right">
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+        <button id="logoutBtn" class="btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 2.5rem;">
+
+    <button class="btn-outline mb-8" onclick="window.location.href='index.html'">
+      ← Back to Home
+    </button>
+
+    <div class="text-center mb-10">
+      <h1 class="hero-title">Quiz Mode 🧠</h1>
+      <p class="section-sub">Test what you learned.</p>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="quizContainer" class="quiz-card" style="display:none">
+      <!-- Header -->
+      <div class="quiz-header">
+        <div>
+          <p class="quiz-label">Question</p>
+          <h3 class="quiz-counter"><span id="qNum">1</span><span class="quiz-total" id="qTotal">/5</span></h3>
+        </div>
+        <div style="display:flex; align-items:center; gap:1.5rem;">
+          <div id="countdown" class="countdown" style="display:none"></div>
+          <div style="text-align:right">
+            <p class="quiz-label">Score</p>
+            <h3 class="quiz-counter sky" id="scoreDisplay">0</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+
+      <!-- Question -->
+      <h2 class="quiz-question" id="questionText"></h2>
+
+      <!-- Options -->
+      <div class="options-list" id="optionsList"></div>
+    </div>
+
+    <!-- Score Screen -->
+    <div id="scoreScreen" class="quiz-card text-center" style="display:none">
+      <div id="scoreEmoji" style="font-size:4rem; margin-bottom:1rem;"></div>
+      <h2 class="section-title">Quiz Complete!</h2>
+      <p class="section-sub" style="margin-bottom:2.5rem;">Here's how you did</p>
+
+      <div class="score-display">
+        <span id="finalScore" class="score-big sky"></span>
+        <div class="score-meta">
+          <span style="color:#64748b">out of</span>
+          <span id="finalTotal" class="score-out"></span>
+        </div>
+      </div>
+
+      <div class="progress-track" style="margin:1.5rem 0 0.5rem;">
+        <div class="progress-fill" id="scoreBar" style="width:0%"></div>
+      </div>
+      <p id="percentText" style="color:#64748b; font-size:0.875rem;"></p>
+
+      <button class="btn-primary btn-lg" style="margin-top:2rem;" onclick="window.location.href='index.html'">
+        Back to Home
+      </button>
+    </div>
+
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
