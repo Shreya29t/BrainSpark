@@ -9,4 +9,4 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-window.BRAINSPARK_API_URL = "http://127.0.0.1:8000";
+window.BRAINSPARK_API_URL = "https://brainspark-r4pn.onrender.com";
