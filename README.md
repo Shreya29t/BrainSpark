@@ -2,15 +2,6 @@
 
 BrainSpark transforms your PDF study material into smart flashcards and quizzes using AI — making learning faster, smarter, and more effective.
 
----
-
-## 🚀 Live Demo
-
-🔗 **Frontend**: [brainspark.github.io](https://shreya29t.github.io/BrainSpark/frontend)  
-🔗 **Backend API**: [brainspark.onrender.com](https://your-backend.onrender.com)
-
----
-
 ## ✨ Features
 
 - 📄 **PDF Upload** — Upload any PDF study material
